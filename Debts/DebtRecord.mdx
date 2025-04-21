@@ -1,0 +1,93 @@
+---
+title: "Create a Debt Record"
+description: "POST /https:/api.forthcrm.com/v1/debts
+
+The Debts section allows users to create and manage debt records within the system. Users can input various details such as debt amounts, creditor information, and payment history to effectively track and handle debt-related tasks. Additionally, users can retrieve detailed information about debts through the API responses, facilitating efficient debt management processes."
+---
+
+<Accordion title="Request Body" icon="sparkles">
+  <RequestExample>
+
+  ``` Body
+  {
+    "original_debt_amount": 10500,
+    "current_debt_amount": 9499.5,
+    "current_payment": 153,
+    "current_rate": 0,
+    "verified_debt_amount": 0,
+    "creditor": 540,
+    "debt_buyer": 17576331,
+    "poa_sent_date": "2019-08-24",
+    "legal_account": false,
+    "last_payment_date": "2019-08-24",
+    "last_payment_amount": 0,
+    "opened_date": "2019-08-24",
+    "available_balance": 0,
+    "enrolled": false,
+    "has_summons": true,
+    "enrolled_date": "2019-08-24",
+    "debt_type": 0,
+    "debt_status": "Active",
+    "locked": false,
+    "og_account_num": "12345674445",
+    "creditor_account_num": "N/A",
+    "settled": false,
+    "settlement_id": 0,
+    "client_id": 123456,
+    "settlement_offers": []
+  }
+  ```
+
+  </RequestExample>
+</Accordion>
+
+<Accordion title="Response Body" icon="sparkles">
+  <ResponseExample>
+
+  ``` 200
+  {
+    "status": "success",
+    "message": "Debt details recorded successfully",
+    "data": {
+      "original_debt_amount": 10500,
+      "current_debt_amount": 9499.5,
+      "current_payment": 153,
+      "current_rate": 0,
+      "verified_debt_amount": 0,
+      "creditor": 540,
+      "debt_buyer": 17576331,
+      "poa_sent_date": "2019-08-24",
+      "legal_account": false,
+      "last_payment_date": "2019-08-24",
+      "last_payment_amount": 0,
+      "opened_date": "2019-08-24",
+      "available_balance": 0,
+      "enrolled": false,
+      "has_summons": true,
+      "enrolled_date": "2019-08-24",
+      "debt_type": 0,
+      "debt_status": "Active",
+      "locked": false,
+      "og_account_num": "12345674445",
+      "creditor_account_num": "N/A",
+      "settled": false,
+      "settlement_id": 0,
+      "client_id": 123456,
+      "settlement_offers": [],
+      "timestamp": "2025-04-14T08:58:00Z"
+    }
+  }
+  ```
+
+  
+  ``` 400
+  {
+      "status": {
+          "code": 400,
+          "message": "Bad Request"
+      }
+  }
+  ```
+
+  </ResponseExample>
+</Accordion>
