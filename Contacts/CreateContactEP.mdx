@@ -1,0 +1,135 @@
+---
+title: "New file"
+description: "Create a Contact Endpoint"
+---
+
+<Accordion title="Request Body" description="Create a Contact Endpoint" icon="sparkles">
+  <RequestExample>
+
+  ``` Body
+  {
+    "response": {
+      "business_name": "Acme Corp",
+      "file_type": 1,
+      "form_id": 18626,
+      "assigned_to": 6045085,
+      "secondary_assignments": {
+        "companies": [
+          {
+            "company_type": "321",
+            "company_id": "83"
+          }
+        ],
+        "roles": [
+          {
+            "role_id": "543",
+            "user_id": "5544"
+          }
+        ],
+        "teams": [
+          2323,
+          543
+        ]
+      },
+      "campaign_id": 128312,
+      "attorney": false,
+      "attorney_id": 0,
+      "attorney_id2": 0,
+      "first_name": "John",
+      "middle_name": "E.",
+      "last_name": "Doe",
+      "salutation": "Salutation",
+      "title": "Mr.",
+      "phone_number": "12242525887",
+      "phone_extension": "123",
+      "cell_phone": "12242525887",
+      "cell_extension": "123",
+      "work_phone": "13123839986",
+      "work_extension": "123",
+      "address": {
+        "address1": "123 Main St.",
+        "address2": "Apt. 4008",
+        "address3": "string",
+        "city": "Chicago",
+        "state": "IL",
+        "zip": "60612"
+      },
+      "email": "test@setforth.com",
+      "social_security_number": "551192922",
+      "date_of_birth": "1941-03-12",
+      "language": 1,
+      "total_debt": 0,
+      "welcome_sent": "2020-02-21 16:23:29",
+      "paper_statements": true,
+      "paper_welcome": true,
+      "gateway_id": 1,
+      "gateway_approved_by": 0,
+      "gateway_hold": false,
+      "gateway_hold_reason": 0,
+      "gateway_hold_notes": "n/a",
+      "gateway_auth_received": true,
+      "gateway_auth_file": "66c29015-debtpaypro_QA_Test_Template_-_Chase_(xxxx4444).pdf",
+      "iscoapp": false,
+      "customs": [
+        {
+          "field_id": "2085",
+          "value": [
+            "enrolled",
+            "invalidated",
+            "waiting for credit bureau"
+          ],
+          "label": "Account Status",
+          "type": "Multiple Select"
+        }
+      ],
+      "budget_fields": [
+        {
+          "field_id": 3423,
+          "value": "3200"
+        }
+      ]
+    },
+    "status": {
+      "code": 200
+    }
+  }
+  ```
+
+  </RequestExample>
+</Accordion>
+
+<Accordion title="Response Body" icon="sparkles">
+  <ResponseExample>
+
+  ``` 200
+  {
+    "status": "success",
+    "message": "Note created successfully",
+    "data": {
+      "content": "string",
+      "note_type": 1,
+      "public": true,
+      "notify_users": [
+        1234
+      ],
+      "cc_emails": [
+        "test@test.com"
+      ],
+      "note_id": 56789,
+      "created_at": "2025-04-14T09:20:00Z"
+    }
+  }
+  ```
+
+  
+  ``` 400
+  {
+    "status": {
+      "code": 400,
+      "message": "Bad Request"
+    }
+  }
+  ```
+
+  </ResponseExample>
+</Accordion>
