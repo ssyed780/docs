@@ -1,5 +1,57 @@
----
-title: "Generate a Document"
-description: "POST /https:/api.forthcrm.com/v1/documents
-The "Documents" section allows users to upload various types of documents related to contacts, debts, syndications, orders, and loans, along with customizable tags. Users can also utilize a sign service for electronic signatures and retrieve detailed information about the uploaded documents, signatories, and signatures. Additionally, this section provides error handling for status codes 400 and 403."
----
+<Accordion title="Request Body" icon="sparkles">
+  <RequestExample>
+
+  ``` filename
+  {
+    "contact_id": 123456,
+    "debt_id": 789012,
+    "tags": [],
+    "signservice": "clixsign"
+  }
+  ```
+
+  </RequestExample>
+</Accordion>
+
+<Accordion title="Response Body" icon="sparkles">
+  <ResponseExample>
+
+  ``` 200
+  {
+    "status": "success",
+    "message": "Request processed successfully",
+    "data": {
+      "contact_id": 123456,
+      "debt_id": 789012,
+      "tags": [],
+      "signservice": "clixsign",
+      "timestamp": "2025-04-14T09:02:00Z"
+    }
+  }
+  ```
+
+  
+  ``` 400
+  {
+    "status": {
+      "code": 400,
+      "message": "Bad Request"
+    }
+  }
+  ```
+
+  
+  ``` 403
+  {
+    "status": {
+      "code": 403,
+      "message": "template not found"
+    },
+    "response": [
+      {}
+    ]
+  }
+  ```
+
+  </ResponseExample>
+</Accordion>
