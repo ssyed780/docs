@@ -1,0 +1,107 @@
+---
+title: "Send Clixsign Document"
+description: "POST /https:/api.forthcrm.com/v1/contacts/clixsign
+
+
+This section allows users to initiate the sending of a Clixsign document to contacts within the system. Users can customize email and SMS notifications, specify signers, and track the document's status through the response parameters provided
+Guide to Using Clixsign
+Create an Account: Sign up for a ClixSign account and complete the setup process. Upload Your Document:  Upload the document you need to be signed electronically. ClixSign supports various file formats. Add Signature Fields: Drag and drop signature fields onto your document, indicating where recipients need to sign. Add Recipients: Enter the email addresses of the recipients who need to sign the document. Send for Signature:  Send the document to recipients for their electronic signature. Track and Manage: Monitor the progress of your document and receive notifications when signatures are completed. Download and Store: Once all signatures are collected, download the signed document for your records Prepare Your Documents: Ensure that your documents are properly formatted and ready for e-signature before uploading them to ClixSign. Communicate with Recipients:  Clearly communicate the e-signature process to recipients and provide them with any necessary instructions. Use Templates: Create reusable templates for commonly used documents to save time and streamline your workflows. Leverage Integrations:  Take advantage of ClixSign's integrations with your existing business tools to automate tasks and improve efficiency. "
+---
+
+<Accordion title="Request Body" icon="sparkles">
+  <RequestExample>
+
+  ``` filename
+  {
+    "gen_request_id": 23053225,
+    "enforce_order": "true",
+    "notifications": {
+      "email": {
+        "enabled": "true",
+        "template_id": 1238478
+      },
+      "sms": {
+        "enabled": "true",
+        "from_number_id": 123847,
+        "sms_template_id": 14833
+      }
+    },
+    "signers": {
+      "1": {
+        "type": "contact",
+        "enabled": "true"
+      },
+      "2": {
+        "type": "coapplicant",
+        "enabled": "true"
+      },
+      "3": {
+        "type": "user",
+        "enabled": "true"
+      },
+      "4": {
+        "type": "other",
+        "enabled": "true"
+      }
+    }
+  }
+  ```
+
+  </RequestExample>
+</Accordion>
+
+<Accordion title="Response Body" icon="sparkles">
+  <ResponseExample>
+
+  ``` 200
+  {
+    "status": "success",
+    "message": "Request processed successfully",
+    "data": {
+      "gen_request_id": 23053225,
+      "enforce_order": true,
+      "notifications": {
+        "email": {
+          "enabled": true,
+          "template_id": 1238478
+        },
+        "sms": {
+          "enabled": true,
+          "from_number_id": 123847,
+          "sms_template_id": 14833
+        }
+      },
+      "signers": {
+        "1": {
+          "type": "contact",
+          "enabled": true
+        },
+        "2": {
+          "type": "coapplicant",
+          "enabled": true
+        },
+        "3": {
+          "type": "user",
+          "enabled": true
+        },
+        "4": {
+          "type": "other",
+          "enabled": true
+        }
+      }
+    }
+  }
+  ```
+
+  
+  ``` 400
+  {
+      "status": {
+          "code": 400,
+          "message": "Bad Request"
+      }
+  }
+  ```
+
+  </ResponseExample>
+</Accordion>
