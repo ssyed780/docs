@@ -1,0 +1,102 @@
+---
+title: "Send Clixsign Document"
+description: "POST /https:/api.forthcrm.com/v1/contacts/clixsign"
+---
+
+<Accordion title="Request Body" icon="sparkles">
+  <RequestExample>
+
+  ``` Body
+  {
+    "gen_request_id": 23053225,
+    "enforce_order": "true",
+    "notifications": {
+      "email": {
+        "enabled": "true",
+        "template_id": 1238478
+      },
+      "sms": {
+        "enabled": "true",
+        "from_number_id": 123847,
+        "sms_template_id": 14833
+      }
+    },
+    "signers": {
+      "1": {
+        "type": "contact",
+        "enabled": "true"
+      },
+      "2": {
+        "type": "coapplicant",
+        "enabled": "true"
+      },
+      "3": {
+        "type": "user",
+        "enabled": "true"
+      },
+      "4": {
+        "type": "other",
+        "enabled": "true"
+      }
+    }
+  }
+  ```
+
+  </RequestExample>
+</Accordion>
+
+<Accordion title="Response Body" icon="sparkles">
+  <ResponseExample>
+
+  ``` 200
+  {
+    "status": "success",
+    "message": "Request processed successfully",
+    "data": {
+      "gen_request_id": 23053225,
+      "enforce_order": true,
+      "notifications": {
+        "email": {
+          "enabled": true,
+          "template_id": 1238478
+        },
+        "sms": {
+          "enabled": true,
+          "from_number_id": 123847,
+          "sms_template_id": 14833
+        }
+      },
+      "signers": {
+        "1": {
+          "type": "contact",
+          "enabled": true
+        },
+        "2": {
+          "type": "coapplicant",
+          "enabled": true
+        },
+        "3": {
+          "type": "user",
+          "enabled": true
+        },
+        "4": {
+          "type": "other",
+          "enabled": true
+        }
+      }
+    }
+  }
+  ```
+
+  
+  ``` 400
+  {
+      "status": {
+          "code": 400,
+          "message": "Bad Request"
+      }
+  }
+  ```
+
+  </ResponseExample>
+</Accordion>
