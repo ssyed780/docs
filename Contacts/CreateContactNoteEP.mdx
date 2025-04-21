@@ -1,0 +1,58 @@
+---
+title: "POST /https:/api.forthcrm.com/v1/contacts/notes"
+description: "Create a Contact Note"
+---
+
+<Accordion title="Request Body" icon="sparkles">
+  <RequestExample>
+
+  ``` Body
+  {
+    "content": "string",
+    "note_type": 1,
+    "public": true,
+    "notify_users": [
+      1234
+    ],
+    "cc_emails": [
+      "test@test.com"
+    ]
+  }
+  ```
+
+  </RequestExample>
+</Accordion>
+
+<ResponseExample>
+
+``` 200
+{
+  "status": "success",
+  "message": "Note created successfully",
+  "data": {
+    "content": "string",
+    "note_type": 1,
+    "public": true,
+    "notify_users": [
+      1234
+    ],
+    "cc_emails": [
+      "test@test.com"
+    ],
+    "note_id": 56789,
+    "created_at": "2025-04-14T09:20:00Z"
+  }
+}
+```
+
+
+``` 400
+{
+  "status": {
+    "code": 400,
+    "message": "Bad Request"
+  }
+}
+```
+
+</ResponseExample>
