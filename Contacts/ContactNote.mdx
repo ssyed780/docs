@@ -1,15 +1,16 @@
 ---
 title: "Create a Contact Note"
-description: "POST /https:/api.forthcrm.com/v1/contacts/notes  
-
-
-This section enables users to create a new note associated with a contact in the system. Users can provide content, specify the note type, and choose whether the note should be public or private. Additionally, users can notify other users and include CC emails in the note creation process. "
+description: "  This section enables users to create a new note associated with a contact in the system. Users can provide content, specify the note type, and choose whether the note should be public or private. Additionally, users can notify other users and include CC emails in the note creation process. "
 ---
+
+<ParamField path="POST /https:/api.forthcrm.com/v1/contacts/notes" type="string">
+  
+</ParamField>
 
 <Accordion title="Request Body" icon="sparkles">
   <RequestExample>
 
-  ```filename
+  ```filename Body
   {
     "content": "string",
     "note_type": 1,
@@ -29,7 +30,7 @@ This section enables users to create a new note associated with a contact in the
 <Accordion title="Response Body" icon="sparkles">
   <ResponseExample>
 
-  ```200
+  ```200 200
   {
     "status": "success",
     "message": "Note created successfully",
@@ -50,7 +51,7 @@ This section enables users to create a new note associated with a contact in the
   ```
 
   
-  ```400
+  ```400 400
   {
     "status": {
       "code": 400,

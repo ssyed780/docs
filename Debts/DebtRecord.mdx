@@ -1,16 +1,16 @@
 ---
 title: "Create a Debt Record"
-description: "POST/https:/api.forthcrm.com/v1/debts
-
-
-The Debts section allows users to create and manage debt records within the system. Users can input various details such as debt amounts, creditor information, and payment history to effectively track and handle debt-related tasks. Additionally, users can retrieve detailed information about debts through the API responses, facilitating efficient debt management processes.
-"
+description: " The Debts section allows users to create and manage debt records within the system. Users can input various details such as debt amounts, creditor information, and payment history to effectively track and handle debt-related tasks. Additionally, users can retrieve detailed information about debts through the API responses, facilitating efficient debt management processes. "
 ---
+
+<ParamField path="POST/https:/api.forthcrm.com/v1/debts " type="string">
+  
+</ParamField>
 
 <Accordion title="Request Body" icon="sparkles">
   <RequestExample>
 
-  ``` filename
+  ```filename Body
   {
     "original_debt_amount": 10500,
     "current_debt_amount": 9499.5,
@@ -46,7 +46,7 @@ The Debts section allows users to create and manage debt records within the syst
 <Accordion title="Response Body" icon="sparkles">
   <ResponseExample>
 
-  ``` 200
+  ```200 200
   {
     "status": "success",
     "message": "Debt details recorded successfully",
@@ -82,7 +82,7 @@ The Debts section allows users to create and manage debt records within the syst
   ```
 
   
-  ``` 400
+  ```400 400
   {
       "status": {
           "code": 400,

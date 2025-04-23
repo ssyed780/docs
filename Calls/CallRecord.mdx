@@ -1,36 +1,36 @@
 ---
 title: "Create a Call Record"
-description: "POST /https:/api.forthcrm.com/v1/calls 
-
-
- The Calls section allows users to create new call records with detailed information such as call type, notes, and duration. Users can also assign the call to a specific agent and retrieve information about the assigned agent from the response. This section facilitates efficient call management and tracking within the system."
+description: " The Calls section allows users to create new call records with detailed information such as call type, notes, and duration. Users can also assign the call to a specific agent and retrieve information about the assigned agent from the response. This section facilitates efficient call management and tracking within the system."
 ---
 
-<Accordion title="Request Body" icon="sparkles">
-  <RequestExample>
+<ParamField path="POST /https:/api.forthcrm.com/v1/calls " type="string">
+  <Accordion title="Request Body" icon="sparkles">
+    <RequestExample>
 
-  ```filename
-  {
-    "contactID": 560722588,
-    "created_at": "2019-08-24 12:00:00",
-    "call_type": "Outgoing",
-    "call_disposition": "6",
-    "notes": "Lorem Ipsum",
-    "duration": "00:01:27",
-    "event_id": 8179,
-    "dialer_id": 1,
-    "recording_url": "https://stairwork.ru/test.mp3",
-    "assigned_agent": 432156
-  }
-  ```
+    ```Body Body
+    {
+      "contactID": {{contact_id}},
+      "sdate": "2019-08-24",
+      "call_type": "Outgoing",
+      "call_result": "Hung Up",
+      "call_disposition": "7",
+      "notes": "Lorem Ipsum Test 4",
+      "duration": "00:01:27",
+      "event_id": 8179,
+      "dialer_id": 1,
+      "recording_url": "https://stairwork.ru/test.mp3",
+      "assigned_agent": 432156
+    }
+    ```
 
-  </RequestExample>
-</Accordion>
+    </RequestExample>
+  </Accordion>
+</ParamField>
 
 <Accordion title="Response Body" icon="sparkles">
   <ResponseExample>
 
-  ```200
+  ```200 200
   {
     "status": "success",
     "message": "Call log recorded successfully",
@@ -53,7 +53,7 @@ description: "POST /https:/api.forthcrm.com/v1/calls
   ```
 
   
-  ```400
+  ```400 400
   {
       "status": {
           "code": 400,
@@ -64,3 +64,5 @@ description: "POST /https:/api.forthcrm.com/v1/calls
 
   </ResponseExample>
 </Accordion>
+
+/
