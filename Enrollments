@@ -1,1 +1,402 @@
+---
+title: "Create Enrollment Plans for a Contact"
+description: " This endpoint enables users to create flexible, custom enrollment plans tailored to individual contacts. It provides the tools to define payment schedules, fees, and settlement details, empowering users to manage diverse enrollment scenarios efficiently."
+---
 
+<ParamField path="POST /https:/api.forthcrm.com/v1/calls " type="string">
+  <Accordion title="Request Body" icon="sparkles">
+    <RequestExample>
+
+    ```Body Body
+  {
+  "ep_template": 23432423,
+  "first_payment_date": "2021-02-15",
+  "recurring_start_date": "2021-02-15",
+  "payment_method": "ACH",
+  "split_template": 2321321,
+  "gateway_id": "1",
+  "est_settlement": 50,
+  "frequency": {
+    "type": "sm",
+    "duration": 25,
+    "interval": "15,Last"
+  },
+  "fees": {
+    "1": {
+      "amount": 20,
+      "starts": "1",
+      "ends": "full"
+    },
+    "2": {
+      "amount": 39,
+      "starts": "2",
+      "ends": "full"
+    },
+    "6": {
+      "amount": 9.95,
+      "starts": "1",
+      "ends": 1
+    },
+    "7": {
+      "amount": 9.95,
+      "starts": "2",
+      "ends": "full"
+    }
+  }
+}
+    ```
+
+    </RequestExample>
+  </Accordion>
+</ParamField>
+
+<Accordion title="Response Body" icon="sparkles">
+  <ResponseExample>
+
+  ```200 200
+ {
+  "status": {
+    "code": 200,
+    "message": "success"
+  },
+  "response": {
+    "object": "enrollment_plan",
+    "id": 3212321,
+    "contact_id": 23423423,
+    "payments": [
+      {
+        "payment_num": 1,
+        "payment_date": "2025-06-07",
+        "fee1": 158.71,
+        "fee2": 39,
+        "fee3": 0,
+        "fee4": 0,
+        "fee5": 0,
+        "fee6": "9.95",
+        "fee7": 9.95,
+        "savings": 244.4,
+        "total_payment": 462.01
+      },
+      {
+        "payment_num": 2,
+        "payment_date": "2025-07-15",
+        "fee1": 158.71,
+        "fee2": 39,
+        "fee3": 0,
+        "fee4": 0,
+        "fee5": 0,
+        "fee6": 0,
+        "fee7": 9.95,
+        "savings": 254.35,
+        "total_payment": 462.01
+      },
+      {
+        "payment_num": 3,
+        "payment_date": "2025-08-15",
+        "fee1": 158.71,
+        "fee2": 39,
+        "fee3": 0,
+        "fee4": 0,
+        "fee5": 0,
+        "fee6": 0,
+        "fee7": 9.95,
+        "savings": 254.35,
+        "total_payment": 462.01
+      },
+      {
+        "payment_num": 4,
+        "payment_date": "2025-09-15",
+        "fee1": 158.71,
+        "fee2": 39,
+        "fee3": 0,
+        "fee4": 0,
+        "fee5": 0,
+        "fee6": 0,
+        "fee7": 9.95,
+        "savings": 254.35,
+        "total_payment": 462.01
+      },
+      {
+        "payment_num": 5,
+        "payment_date": "2025-10-15",
+        "fee1": 158.71,
+        "fee2": 39,
+        "fee3": 0,
+        "fee4": 0,
+        "fee5": 0,
+        "fee6": 0,
+        "fee7": 9.95,
+        "savings": 254.35,
+        "total_payment": 462.01
+      },
+      {
+        "payment_num": 6,
+        "payment_date": "2025-11-14",
+        "fee1": 158.71,
+        "fee2": 39,
+        "fee3": 0,
+        "fee4": 0,
+        "fee5": 0,
+        "fee6": 0,
+        "fee7": 9.95,
+        "savings": 254.35,
+        "total_payment": 462.01
+      },
+      {
+        "payment_num": 7,
+        "payment_date": "2025-12-15",
+        "fee1": 158.71,
+        "fee2": 39,
+        "fee3": 0,
+        "fee4": 0,
+        "fee5": 0,
+        "fee6": 0,
+        "fee7": 9.95,
+        "savings": 254.35,
+        "total_payment": 462.01
+      },
+      {
+        "payment_num": 8,
+        "payment_date": "2026-01-15",
+        "fee1": 158.71,
+        "fee2": 39,
+        "fee3": 0,
+        "fee4": 0,
+        "fee5": 0,
+        "fee6": 0,
+        "fee7": 9.95,
+        "savings": 254.35,
+        "total_payment": 462.01
+      },
+      {
+        "payment_num": 9,
+        "payment_date": "2026-02-13",
+        "fee1": 158.71,
+        "fee2": 39,
+        "fee3": 0,
+        "fee4": 0,
+        "fee5": 0,
+        "fee6": 0,
+        "fee7": 9.95,
+        "savings": 254.35,
+        "total_payment": 462.01
+      },
+      {
+        "payment_num": 10,
+        "payment_date": "2026-03-13",
+        "fee1": 158.71,
+        "fee2": 39,
+        "fee3": 0,
+        "fee4": 0,
+        "fee5": 0,
+        "fee6": 0,
+        "fee7": 9.95,
+        "savings": 254.35,
+        "total_payment": 462.01
+      },
+      {
+        "payment_num": 11,
+        "payment_date": "2026-04-15",
+        "fee1": 158.71,
+        "fee2": 39,
+        "fee3": 0,
+        "fee4": 0,
+        "fee5": 0,
+        "fee6": 0,
+        "fee7": 9.95,
+        "savings": 254.35,
+        "total_payment": 462.01
+      },
+      {
+        "payment_num": 12,
+        "payment_date": "2026-05-15",
+        "fee1": 158.71,
+        "fee2": 39,
+        "fee3": 0,
+        "fee4": 0,
+        "fee5": 0,
+        "fee6": 0,
+        "fee7": 9.95,
+        "savings": 254.35,
+        "total_payment": 462.01
+      },
+      {
+        "payment_num": 13,
+        "payment_date": "2026-06-15",
+        "fee1": 158.71,
+        "fee2": 39,
+        "fee3": 0,
+        "fee4": 0,
+        "fee5": 0,
+        "fee6": 0,
+        "fee7": 9.95,
+        "savings": 254.35,
+        "total_payment": 462.01
+      },
+      {
+        "payment_num": 14,
+        "payment_date": "2026-07-15",
+        "fee1": 158.71,
+        "fee2": 39,
+        "fee3": 0,
+        "fee4": 0,
+        "fee5": 0,
+        "fee6": 0,
+        "fee7": 9.95,
+        "savings": 254.35,
+        "total_payment": 462.01
+      },
+      {
+        "payment_num": 15,
+        "payment_date": "2026-08-14",
+        "fee1": 158.71,
+        "fee2": 39,
+        "fee3": 0,
+        "fee4": 0,
+        "fee5": 0,
+        "fee6": 0,
+        "fee7": 9.95,
+        "savings": 254.35,
+        "total_payment": 462.01
+      },
+      {
+        "payment_num": 16,
+        "payment_date": "2026-09-15",
+        "fee1": 158.71,
+        "fee2": 39,
+        "fee3": 0,
+        "fee4": 0,
+        "fee5": 0,
+        "fee6": 0,
+        "fee7": 9.95,
+        "savings": 254.35,
+        "total_payment": 462.01
+      },
+      {
+        "payment_num": 17,
+        "payment_date": "2026-10-15",
+        "fee1": 158.71,
+        "fee2": 39,
+        "fee3": 0,
+        "fee4": 0,
+        "fee5": 0,
+        "fee6": 0,
+        "fee7": 9.95,
+        "savings": 254.35,
+        "total_payment": 462.01
+      },
+      {
+        "payment_num": 18,
+        "payment_date": "2026-11-13",
+        "fee1": 158.71,
+        "fee2": 39,
+        "fee3": 0,
+        "fee4": 0,
+        "fee5": 0,
+        "fee6": 0,
+        "fee7": 9.95,
+        "savings": 254.35,
+        "total_payment": 462.01
+      },
+      {
+        "payment_num": 19,
+        "payment_date": "2026-12-15",
+        "fee1": 158.71,
+        "fee2": 39,
+        "fee3": 0,
+        "fee4": 0,
+        "fee5": 0,
+        "fee6": 0,
+        "fee7": 9.95,
+        "savings": 254.35,
+        "total_payment": 462.01
+      },
+      {
+        "payment_num": 20,
+        "payment_date": "2027-01-15",
+        "fee1": 158.71,
+        "fee2": 39,
+        "fee3": 0,
+        "fee4": 0,
+        "fee5": 0,
+        "fee6": 0,
+        "fee7": 9.95,
+        "savings": 254.35,
+        "total_payment": 462.01
+      },
+      {
+        "payment_num": 21,
+        "payment_date": "2027-02-12",
+        "fee1": 158.71,
+        "fee2": 39,
+        "fee3": 0,
+        "fee4": 0,
+        "fee5": 0,
+        "fee6": 0,
+        "fee7": 9.95,
+        "savings": 254.35,
+        "total_payment": 462.01
+      },
+      {
+        "payment_num": 22,
+        "payment_date": "2027-03-15",
+        "fee1": 158.71,
+        "fee2": 39,
+        "fee3": 0,
+        "fee4": 0,
+        "fee5": 0,
+        "fee6": 0,
+        "fee7": 9.95,
+        "savings": 254.35,
+        "total_payment": 462.01
+      },
+      {
+        "payment_num": 23,
+        "payment_date": "2027-04-15",
+        "fee1": 158.71,
+        "fee2": 39,
+        "fee3": 0,
+        "fee4": 0,
+        "fee5": 0,
+        "fee6": 0,
+        "fee7": 9.95,
+        "savings": 254.35,
+        "total_payment": 462.01
+      },
+      {
+        "payment_num": 24,
+        "payment_date": "2027-05-14",
+        "fee1": 158.67,
+        "fee2": 39,
+        "fee3": 0,
+        "fee4": 0,
+        "fee5": 0,
+        "fee6": 0,
+        "fee7": 9.95,
+        "savings": 254.3,
+        "total_payment": 461.92
+      }
+    ],
+    "totals": {
+      "fee1": 3809,
+      "fee2": 936,
+      "fee3": 0,
+      "fee4": 0,
+      "fee5": 0,
+      "fee6": 9.95,
+      "fee7": 238.8,
+      "savings": 6094.4,
+      "total_payment": 11088.15
+    }
+  }
+}
+  ```
+
+  
+  ```400 400
+ {
+  "status": {
+    "code": 400,
+    "message": "Bad Request"
+  }
+}
